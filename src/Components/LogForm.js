@@ -1,14 +1,20 @@
 
 import './LogForm.css';
 import Card from './Card';
-import React from 'react';
+import React, { useState } from 'react';
+
 
 
 const LogForm = () => {
     //Create three variables to store data
-    let inputDesc='';
-    let inputDate='';
-    let inputTime=0;
+    //let inputDesc='';
+    //let inputDate='';
+    //let inputTime=0;
+    const[inputDate, setInputDate]=useState('');
+    const[inputDesc, setInputDesc]=useState('');
+    const[inputTime, setInputTime]=useState(0);
+
+
     
 
     //Creat a response function to monitor content changes
@@ -16,7 +22,7 @@ const LogForm = () => {
         // Get the object that currently triggers the event
         //The event object stores all the information when the current event is triggered.
         //event.target executes the object that triggered the event (DOM object)
-        inputDesc=e.target.value;
+        setInputDesc(e.target.value);
 
     }
     //Creat a response function to monitor date changes
@@ -24,7 +30,7 @@ const LogForm = () => {
         // Get the object that currently triggers the event
         //The event object stores all the information when the current event is triggered.
         //event.target executes the object that triggered the event (DOM object)
-        inputDate=e.target.value
+        setInputDate(e.target.value);
 
 
     }
@@ -33,7 +39,7 @@ const LogForm = () => {
         // Get the object that currently triggers the event
         //The event object stores all the information when the current event is triggered.
         //event.target executes the object that triggered the event (DOM object)
-        inputTime=e.target.value
+        setInputTime(e.target.value);
     }
     
     //When the form is submitted, summarize the data in the form
@@ -48,6 +54,11 @@ const LogForm = () => {
             time:+inputTime //"+" can make the inputTime convert string to number
 
         };
+    //clear the form when click the "Submit" botton clear the form
+        setInputDate('');
+        setInputDesc('');
+        setInputTime('');
+
         console.log(newLog);
 
 
@@ -60,15 +71,15 @@ const LogForm = () => {
             <form onSubmit={formSubmitHandler}>
                 <div className='form-item'>
                     <label htmlFor='date'>DATE</label>
-                    <input onChange={dateChangeHandler} id='date' type='date'/>
+                    <input onChange={dateChangeHandler} value={inputDate} id='date' type='date'/>
                 </div>
                 <div className='form-item'>
                     <label htmlFor='desc'>CONTENT</label>
-                    <input onChange={descChangeHandler} id='desc' type='text' />
+                    <input onChange={descChangeHandler} value={inputDesc} id='desc' type='text' />
                 </div>
                 <div className='form-item'>
                     <label htmlFor='time'>TIME</label>
-                    <input onChange={timeChangeHandler}id='time' type='number' />
+                    <input onChange={timeChangeHandler} value={inputTime} id='time' type='number' />
                 </div>
                 <div className='form-btn'>
                     <button>
