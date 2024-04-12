@@ -5,7 +5,7 @@ import  React, { useState } from 'react';
 
 
 
-const LogForm = () => {
+const LogForm = (props) => {
     //Create three variables to store data
     //let inputDesc='';
     //let inputDate='';
@@ -13,8 +13,7 @@ const LogForm = () => {
     const[inputDate, setInputDate]=useState('');
     const[inputDesc, setInputDesc]=useState('');
     const[inputTime, setInputTime]=useState(0)
-
-
+    
     
 
     //Creat a response function to monitor content changes
@@ -59,18 +58,17 @@ const LogForm = () => {
             time:+inputTime //"+" can make the inputTime convert string to number
 
         };
+        props.onSaveLog(newLog);
     //clear the form when click the "Submit" botton clear the form
         setInputDate('');
         setInputDesc('');
         setInputTime('');
-
-        console.log(newLog);
     }
 
 
     return (
+        
         <Card>
-
             <form onSubmit={formSubmitHandler}>
                 <div className='form-item'>
                     <label htmlFor='date'>DATE</label>

@@ -11,6 +11,9 @@ function LogItem(props) {
                 <div className='time'>{props.time}</div>
 
             </div>
+            <div>
+                <div className='delete'>✖️</div>
+            </div>
 
 
            
