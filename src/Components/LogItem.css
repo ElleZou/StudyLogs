@@ -10,7 +10,10 @@
 }
 .time{
     margin:auto;
-    
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color:red;
 }
 .delete{
     font-size:25px;

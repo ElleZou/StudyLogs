@@ -5,7 +5,9 @@
     font-weight: bold;
     text-align: center;
     overflow: hidden;
-    margin-left: px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 
 }
 .month{

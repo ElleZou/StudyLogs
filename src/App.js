@@ -56,7 +56,6 @@ const App = () => {
         <div>
             <LogForm onSaveLog={saveLogHandler}/>
             <Logs logsData={logsData} onDelLog={delLogByIndex}/>
-            
           
         </div>
     );
