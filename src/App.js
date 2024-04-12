@@ -3,6 +3,7 @@ import Logs from './Components/Logs';
 import LogForm from './Components/LogForm';
 
 const App = () => {
+    
     return (
         <div>
             <LogForm/>

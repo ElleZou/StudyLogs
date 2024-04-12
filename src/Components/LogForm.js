@@ -1,7 +1,7 @@
 
 import './LogForm.css';
 import Card from './Card';
-import React, { useState } from 'react';
+import  React, { useState } from 'react';
 
 
 
@@ -12,7 +12,7 @@ const LogForm = () => {
     //let inputTime=0;
     const[inputDate, setInputDate]=useState('');
     const[inputDesc, setInputDesc]=useState('');
-    const[inputTime, setInputTime]=useState(0);
+    const[inputTime, setInputTime]=useState(0)
 
 
     
@@ -23,24 +23,29 @@ const LogForm = () => {
         //The event object stores all the information when the current event is triggered.
         //event.target executes the object that triggered the event (DOM object)
         setInputDesc(e.target.value);
-
+        
     }
+    
+    
     //Creat a response function to monitor date changes
     const dateChangeHandler = (e) => {
         // Get the object that currently triggers the event
         //The event object stores all the information when the current event is triggered.
         //event.target executes the object that triggered the event (DOM object)
         setInputDate(e.target.value);
-
-
+        
     }
+    
+    
     //Creat a response function to monitor time changes
     const timeChangeHandler = (e) => {
         // Get the object that currently triggers the event
         //The event object stores all the information when the current event is triggered.
         //event.target executes the object that triggered the event (DOM object)
         setInputTime(e.target.value);
+        
     }
+    
     
     //When the form is submitted, summarize the data in the form
     const formSubmitHandler = (e) => {
@@ -60,8 +65,6 @@ const LogForm = () => {
         setInputTime('');
 
         console.log(newLog);
-
-
     }
 
 

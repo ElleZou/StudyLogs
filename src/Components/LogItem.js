@@ -1,15 +1,19 @@
 import React from 'react';
 import './LogItem.css';
 import MyDate from './MyDate';
-import Content from './Content';
 
-function LogItem() {
+function LogItem(props) {
     return (
         <div className='item'>
-            <MyDate month={"April"} day={"19"} />
+            <MyDate date={props.date}/>
+            <div className='content'>
+                <h2 className='desc'>{props.desc}</h2>
+                <div className='time'>{props.time}</div>
+
+            </div>
 
 
-            <Content content={"Study React"} time={"1H20M"} />
+           
 
 
 
