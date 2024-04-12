@@ -6,13 +6,21 @@
     box-shadow: 0 0 10px rgba(0,0,0,.2);
 }
 .content{
-    margin:auto
+    margin:auto;
 }
 .time{
-    margin:auto
+    margin:auto;
     
 }
 .delete{
-    color:white
+    font-size:25px;
+    font-weight:bold;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: .5s;
 
+
+}
+.delete:hover{
+    transform: rotate(.5turn);
 }

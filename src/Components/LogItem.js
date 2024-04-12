@@ -3,6 +3,13 @@ import './LogItem.css';
 import MyDate from './MyDate';
 
 function LogItem(props) {
+    const deleteItemHandler =() => {
+        const isDel=window.confirm('Delete');
+        if(isDel){
+            //delete current item:removes the specified data from the data's State
+            props.onDelLog();
+        }
+    };
     return (
         <div className='item'>
             <MyDate date={props.date}/>
@@ -12,7 +19,7 @@ function LogItem(props) {
 
             </div>
             <div>
-                <div className='delete'>✖️</div>
+                <div onClick={deleteItemHandler} className='delete'>✖️</div>
             </div>
 
 

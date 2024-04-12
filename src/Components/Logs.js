@@ -6,7 +6,9 @@ const Logs = (props) => {
 
    
    //Use the method of traversing data when obtaining multiple sets of data
-    const logItemData=props.logsData.map(item => <LogItem key={item.id} date={item.date} desc={item.desc} time={item.time}/>)
+    const logItemData=props.logsData.map((item,index) => <LogItem logIndex={index} onDelLog={props.onDelLog}
+                                                                  key={item.id} date={item.date} 
+                                                                  desc={item.desc} time={item.time}/>)
     //logsData.map(item => <LogItem {...item}/>)
     return (
         <div className = 'logs'>
