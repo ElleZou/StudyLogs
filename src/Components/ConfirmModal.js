@@ -1,17 +1,20 @@
 import React from 'react';
 import './ConfirmModal.css';
-const ConfirmModal = () => {
-    return(
-        <div className='confirmModal'>
-            <div className='text'>
-            <p>This operation is irreversible</p>
+import Backdrop from './Backdrop';
+const ConfirmModal = (props) => {
+    return (
+        <Backdrop>
+            <div className='confirmModal'>
+                <div className='text'>
+                    <p>{props.confirmText}</p>
+                </div>
+                <div className='confirmbutton'>
+                    <button onClick={props.confirm}>confirm</button>
+                    <button onClick={props.cancel}>cancel</button>
+                </div>
+
             </div>
-            <div className='confirmbutton'>
-                <button>confirm</button>
-                <button>cancel</button>
-            </div>
-        
-        </div>
+        </Backdrop>
     );
 };
 export default ConfirmModal;

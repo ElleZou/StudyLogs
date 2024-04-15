@@ -2,7 +2,6 @@ import React from 'react';
 import Logs from './Components/Logs';
 import LogForm from './Components/LogForm';
 import {useState} from 'react';
-
 const App = () => {
     //Simulate a set of data loaded from the server
     const [logsData,setLogsData]=useState([
@@ -54,6 +53,7 @@ const App = () => {
 
     return (
         <div>
+        
             <LogForm onSaveLog={saveLogHandler}/>
             <Logs logsData={logsData} onDelLog={delLogByIndex}/>
           
