@@ -41,10 +41,9 @@ const App = () => {
         setLogsData([newLog,...logsData])
     };
     //Define a function to delete a log from the data
-    const delLogByIndex = (index) =>{
+    const delLogById= (id) =>{
         setLogsData(prevState => {
-            const newLog=[...prevState];
-            newLog.splice(index,1);
+            const newLog=prevState.filter(item => item.id !== id);
             return newLog;
 
         });
@@ -55,7 +54,7 @@ const App = () => {
         <div>
         
             <LogForm onSaveLog={saveLogHandler}/>
-            <Logs logsData={logsData} onDelLog={delLogByIndex}/>
+            <Logs logsData={logsData} onDelLog={delLogById}/>
           
         </div>
     );
